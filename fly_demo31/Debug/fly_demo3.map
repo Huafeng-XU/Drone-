@@ -1,0 +1,1430 @@
+******************************************************************************
+                  TI ARM Linker PC v5.1.1                      
+******************************************************************************
+>> Linked Sat Jun 04 04:19:16 2016
+
+OUTPUT FILE NAME:   <fly_demo3.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 000077c5
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00009002  00036ffe  R  X
+  SRAM                  20000000   00008000  0000153d  00006ac3  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00009008   00009008    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00007ba2   00007ba2    r-x .text
+  00007e10    00007e10    00000d64   00000d64    r-- .const
+  00008b78    00008b78    00000490   00000490    r-- .cinit
+20000000    20000000    00001544   00000000    rw-
+  20000000    20000000    0000026c   00000000    rw- .vtable
+  2000026c    2000026c    00000800   00000000    rw- .stack
+  20000a70    20000a70    00000581   00000000    rw- .data
+  20000ff4    20000ff4    00000550   00000000    rw- .bss
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123ge6pm_startup_ccs.obj (.intvecs)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.text      0    0000026c    00007ba2     
+                  0000026c    00002350     control.obj (.text)
+                  000025bc    00000f04     uarts.obj (.text)
+                  000034c0    000008c8     imu_new.obj (.text)
+                  00003d88    00000764     capture.obj (.text)
+                  000044ec    00000738     mymath.obj (.text)
+                  00004c24    000006f8     display_oled.obj (.text)
+                  0000531c    00000434     flow.obj (.text)
+                  00005750    00000390     timers.obj (.text)
+                  00005ae0    0000036c     mpu6050.obj (.text)
+                  00005e4c    00000358     init.obj (.text)
+                  000061a4    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.obj (.text)
+                  0000635a    00000002     --HOLE-- [fill = 0]
+                  0000635c    0000018c                                   : xatan.obj (.text)
+                  000064e8    00000168     US100.obj (.text)
+                  00006650    00000158     IIC.obj (.text)
+                  000067a8    00000148     rtsv7M4_T_le_v4SPD16_eabi.lib : sqrt.obj (.text)
+                  000068f0    00000136                                   : fd_div_t2.obj (.text)
+                  00006a26    00000130     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  00006b56    00000002     --HOLE-- [fill = 0]
+                  00006b58    0000011c     rtsv7M4_T_le_v4SPD16_eabi.lib : asin.obj (.text)
+                  00006c74    00000118                                   : atan2.obj (.text)
+                  00006d8c    00000114     PWM.obj (.text)
+                  00006ea0    00000110     rtsv7M4_T_le_v4SPD16_eabi.lib : xdscale.obj (.text)
+                  00006fb0    00000104     driverlib.lib : sysctl.obj (.text:SysCtlClockSet)
+                  000070b4    000000fc     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_mul_t2.obj (.text)
+                  000071b0    000000c8     driverlib.lib : sysctl.obj (.text:SysCtlClockGet)
+                  00007278    000000c4     rtsv7M4_T_le_v4SPD16_eabi.lib : xdnorm.obj (.text)
+                  0000733c    0000009c                                   : memcpy_t2.obj (.text)
+                  000073d8    00000094                                   : auto_init.obj (.text)
+                  0000746c    0000007e                                   : fd_cmp_t2.obj (.text:__aeabi_cdcmple)
+                  000074ea    0000007e                                   : fd_cmp_t2.obj (.text:__aeabi_cdrcmple)
+                  00007568    00000064                                   : xdunscal.obj (.text)
+                  000075cc    00000060     driverlib.lib : interrupt.obj (.text:IntEnable)
+                  0000762c    0000005e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text)
+                  0000768a    00000002     --HOLE-- [fill = 0]
+                  0000768c    0000005c     driverlib.lib : timer.obj (.text:TimerConfigure)
+                  000076e8    0000004a     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_tos_t2.obj (.text)
+                  00007732    00000002     --HOLE-- [fill = 0]
+                  00007734    00000048     driverlib.lib : gpio.obj (.text:GPIOPinConfigure)
+                  0000777c    00000048                   : i2c.obj (.text:I2CMasterInitExpClk)
+                  000077c4    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  0000780c    00000044                                   : cpy_tbl.obj (.text)
+                  00007850    00000044                                   : exit.obj (.text)
+                  00007894    00000044                                   : xdtest.obj (.text)
+                  000078d8    00000040     driverlib.lib : uart.obj (.text:UARTConfigSetExpClk)
+                  00007918    00000040                   : uart.obj (.text:_UARTIntNumberGet)
+                  00007958    00000040     rtsv7M4_T_le_v4SPD16_eabi.lib : signal.obj (.text)
+                  00007998    00000038                                   : fs_tod_t2.obj (.text)
+                  000079d0    00000034     driverlib.lib : interrupt.obj (.text:IntRegister)
+                  00007a04    00000034                   : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  00007a38    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : feraiseexcept.obj (.text)
+                  00007a6c    00000030     main.obj (.text)
+                  00007a9c    00000030     rtsv7M4_T_le_v4SPD16_eabi.lib : xferaise.obj (.text)
+                  00007acc    0000002e                                   : i_tofd_t2.obj (.text)
+                  00007afa    0000002e                                   : raise.obj (.text)
+                  00007b28    0000002a     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
+                  00007b52    00000022                   : pwm.obj (.text:PWMGenConfigure)
+                  00007b74    0000001e                   : pwm.obj (.text:PWMPulseWidthSet)
+                  00007b92    00000002     --HOLE-- [fill = 0]
+                  00007b94    0000001c                   : uart.obj (.text:UARTDisable)
+                  00007bb0    00000018                   : gpio.obj (.text:GPIOPinTypeGPIOOutput)
+                  00007bc8    00000018                   : uart.obj (.text:UARTIntRegister)
+                  00007be0    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  00007bf8    00000014     driverlib.lib : sysctl.obj (.text:SysCtlPWMClockSet)
+                  00007c0c    00000014                   : uart.obj (.text:UARTEnable)
+                  00007c20    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  00007c34    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypeGPIOInput)
+                  00007c46    00000012                   : gpio.obj (.text:GPIOPinTypeI2C)
+                  00007c58    00000012                   : gpio.obj (.text:GPIOPinTypeI2CSCL)
+                  00007c6a    00000012                   : gpio.obj (.text:GPIOPinTypePWM)
+                  00007c7c    00000012                   : gpio.obj (.text:GPIOPinTypeTimer)
+                  00007c8e    00000012                   : gpio.obj (.text:GPIOPinTypeUART)
+                  00007ca0    00000012                   : pwm.obj (.text:PWMOutputState)
+                  00007cb2    00000012                   : timer.obj (.text:TimerControlEvent)
+                  00007cc4    00000012                   : timer.obj (.text:TimerLoadSet)
+                  00007cd6    00000012                   : timer.obj (.text:TimerPrescaleSet)
+                  00007ce8    00000012     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  00007cfa    00000010     driverlib.lib : pwm.obj (.text:PWMGenPeriodSet)
+                  00007d0a    0000000e                   : timer.obj (.text:TimerEnable)
+                  00007d18    0000000e                   : uart.obj (.text:UARTCharGetNonBlocking)
+                  00007d26    0000000e                   : uart.obj (.text:UARTCharPutNonBlocking)
+                  00007d34    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  00007d42    0000000c     driverlib.lib : cpu.obj (.text:CPUcpsie)
+                  00007d4e    0000000c                   : pwm.obj (.text:PWMGenEnable)
+                  00007d5a    0000000c                   : uart.obj (.text:UARTCharsAvail)
+                  00007d66    0000000c     tm4c123ge6pm_startup_ccs.obj (.text)
+                  00007d72    0000000a     driverlib.lib : i2c.obj (.text:I2CMasterEnable)
+                  00007d7c    0000000a                   : interrupt.obj (.text:IntMasterEnable)
+                  00007d86    0000000a                   : timer.obj (.text:TimerIntDisable)
+                  00007d90    0000000a                   : timer.obj (.text:TimerPrescaleGet)
+                  00007d9a    0000000a                   : timer.obj (.text:TimerValueGet)
+                  00007da4    0000000a                   : uart.obj (.text:UARTCharPut)
+                  00007dae    0000000a                   : uart.obj (.text:UARTFIFOEnable)
+                  00007db8    0000000a                   : uart.obj (.text:UARTIntStatus)
+                  00007dc2    00000008                   : i2c.obj (.text:I2CMasterBusy)
+                  00007dca    00000008                   : i2c.obj (.text:I2CMasterSlaveAddrSet)
+                  00007dd2    00000008                   : timer.obj (.text:TimerIntEnable)
+                  00007dda    00000008                   : uart.obj (.text:UARTIntEnable)
+                  00007de2    00000006                   : gpio.obj (.text:GPIOPinWrite)
+                  00007de8    00000006                   : sysctl.obj (.text:SysCtlDelay)
+                  00007dee    00000006                   : uart.obj (.text:UARTFIFOLevelSet)
+                  00007df4    00000006     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+                  00007dfa    00000004     driverlib.lib : i2c.obj (.text:I2CMasterControl)
+                  00007dfe    00000004                   : i2c.obj (.text:I2CMasterDataGet)
+                  00007e02    00000004                   : i2c.obj (.text:I2CMasterDataPut)
+                  00007e06    00000004                   : timer.obj (.text:TimerIntClear)
+                  00007e0a    00000004                   : uart.obj (.text:UARTIntClear)
+
+.const     0    00007e10    00000d64     
+                  00007e10    000005f0     display_oled.obj (.const:.string:F8X16)
+                  00008400    00000500     display_oled.obj (.const:Hzk)
+                  00008900    00000090     driverlib.lib : gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  00008990    00000088     rtsv7M4_T_le_v4SPD16_eabi.lib : xatan.obj (.const)
+                  00008a18    00000070     driverlib.lib : interrupt.obj (.const)
+                  00008a88    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  00008af4    00000040                   : uart.obj (.const:g_ppui32UARTIntMap)
+                  00008b34    00000040                   : uart.obj (.const:g_ppui32UARTIntMapSnowflake)
+
+.cinit     0    00008b78    00000490     
+                  00008b78    00000455     (.cinit..data.load) [load image, compression = rle]
+                  00008fcd    00000003     --HOLE-- [fill = 0]
+                  00008fd0    0000000c     (__TI_handler_table)
+                  00008fdc    00000004     --HOLE-- [fill = 0]
+                  00008fe0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00008fe8    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
+                  00008ff0    00000018     (__TI_cinit_table)
+
+.vtable    0    20000000    0000026c     UNINITIALIZED
+                  20000000    0000026c     driverlib.lib : interrupt.obj (.vtable)
+
+.stack     0    2000026c    00000800     UNINITIALIZED
+                  2000026c    00000800     --HOLE--
+
+.data      0    20000a70    00000581     UNINITIALIZED
+                  20000a70    00000404     mymath.obj (.data:fast_atan_table)
+                  20000e74    000000b0     rtsv7M4_T_le_v4SPD16_eabi.lib : signal.obj (.data:sigtable)
+                  20000f24    00000004                                   : errno.obj (.data)
+                  20000f28    00000080                                   : xvalues.obj (.data)
+                  20000fa8    0000001c     imu_new.obj (.data)
+                  20000fc4    00000008     init.obj (.data)
+                  20000fcc    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
+                  20000fd4    00000008                                   : exit.obj (.data)
+                  20000fdc    00000008                                   : feraiseexcept.obj (.data)
+                  20000fe4    00000007     timers.obj (.data)
+                  20000feb    00000001     flow.obj (.data)
+                  20000fec    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : stkdepth_vars.obj (.data)
+                  20000ff0    00000001     mpu6050.obj (.data)
+
+.bss       0    20000ff4    00000550     UNINITIALIZED
+                  20000ff4    000000b0     mymath.obj (.bss:med_filter_tmp)
+                  200010a4    00000028     mpu6050.obj (.bss:ACC_X_BUF)
+                  200010cc    00000028     mpu6050.obj (.bss:ACC_Y_BUF)
+                  200010f4    00000028     mpu6050.obj (.bss:ACC_Z_BUF)
+                  2000111c    00000028     mpu6050.obj (.bss:GYRO_X_BUF)
+                  20001144    00000028     mpu6050.obj (.bss:GYRO_Y_BUF)
+                  2000116c    00000028     mpu6050.obj (.bss:GYRO_Z_BUF)
+                  20001194    00000028     flow.obj (.bss:VX_BUF)
+                  200011bc    00000028     flow.obj (.bss:VY_BUF)
+                  200011e4    00000024     uarts.obj (.bss:UART_TXDATA)
+                  20001208    00000018     (.common:rx_data)
+                  20001220    00000014     (.common:data_to_send)
+                  20001234    0000000c     (.common:flow_data)
+                  20001240    00000008     (.common:img)
+                  20001248    00000004     (.common:ACC_AVG_X)
+                  2000124c    00000004     (.common:ACC_AVG_Y)
+                  20001250    00000004     (.common:ACC_AVG_Z)
+                  20001254    00000004     (.common:ACC_OFFSET_X)
+                  20001258    00000004     (.common:ACC_OFFSET_Y)
+                  2000125c    00000004     (.common:ACC_OFFSET_Z)
+                  20001260    00000004     (.common:Az)
+                  20001264    00000004     (.common:CH1_AVG)
+                  20001268    00000004     (.common:CH2_AVG)
+                  2000126c    00000004     (.common:CH4_AVG)
+                  20001270    00000004     (.common:CH5_AVG)
+                  20001274    00000004     (.common:CH6_AVG)
+                  20001278    00000004     (.common:G)
+                  2000127c    00000004     (.common:GYRO_AVG_X)
+                  20001280    00000004     (.common:GYRO_AVG_Y)
+                  20001284    00000004     (.common:GYRO_AVG_Z)
+                  20001288    00000004     (.common:GYRO_I_Z)
+                  2000128c    00000004     (.common:GYRO_OFFSET_X)
+                  20001290    00000004     (.common:GYRO_OFFSET_Y)
+                  20001294    00000004     (.common:GYRO_OFFSET_Z)
+                  20001298    00000004     (.common:Gx)
+                  2000129c    00000004     (.common:Gy)
+                  200012a0    00000004     (.common:Gz)
+                  200012a4    00000004     (.common:MPU6050_ACC_LAST_X)
+                  200012a8    00000004     (.common:MPU6050_ACC_LAST_Y)
+                  200012ac    00000004     (.common:MPU6050_ACC_LAST_Z)
+                  200012b0    00000004     (.common:MPU6050_GYRO_LAST_X)
+                  200012b4    00000004     (.common:MPU6050_GYRO_LAST_Y)
+                  200012b8    00000004     (.common:MPU6050_GYRO_LAST_Z)
+                  200012bc    00000004     (.common:PPM_1_TIME_1)
+                  200012c0    00000004     (.common:PPM_1_TIME_2)
+                  200012c4    00000004     (.common:PPM_2_TIME_1)
+                  200012c8    00000004     (.common:PPM_2_TIME_2)
+                  200012cc    00000004     (.common:PPM_3_TIME_1)
+                  200012d0    00000004     (.common:PPM_3_TIME_2)
+                  200012d4    00000004     (.common:PPM_4_TIME_1)
+                  200012d8    00000004     (.common:PPM_4_TIME_2)
+                  200012dc    00000004     (.common:PPM_5_TIME_1)
+                  200012e0    00000004     (.common:PPM_5_TIME_2)
+                  200012e4    00000004     (.common:PPM_6_TIME_1)
+                  200012e8    00000004     (.common:PPM_6_TIME_2)
+                  200012ec    00000004     (.common:Q_ANGLE_X)
+                  200012f0    00000004     (.common:Q_ANGLE_Xr)
+                  200012f4    00000004     (.common:Q_ANGLE_Y)
+                  200012f8    00000004     (.common:Q_ANGLE_Yr)
+                  200012fc    00000004     (.common:Q_ANGLE_Z)
+                  20001300    00000004     (.common:T)
+                  20001304    00000004     (.common:US100_Alt)
+                  20001308    00000004     (.common:US100_Alt_old)
+                  2000130c    00000004     (.common:buchang)
+                  20001310    00000004     (.common:check_aspeed_end)
+                  20001314    00000004     (.common:check_end)
+                  20001318    00000004     (.common:control_1_x)
+                  2000131c    00000004     (.common:control_1_y)
+                  20001320    00000004     (.common:control_1_z)
+                  20001324    00000004     (.common:control_2_x)
+                  20001328    00000004     (.common:control_2_y)
+                  2000132c    00000004     (.common:control_2_z)
+                  20001330    00000004     (.common:ctrl_height_out)
+                  20001334    00000004     (.common:d_error_X)
+                  20001338    00000004     (.common:d_error_Y)
+                  2000133c    00000004     (.common:d_error_angle_x)
+                  20001340    00000004     (.common:d_error_angle_y)
+                  20001344    00000004     (.common:d_error_angle_z)
+                  20001348    00000004     (.common:d_error_aspeed_x)
+                  2000134c    00000004     (.common:d_error_aspeed_y)
+                  20001350    00000004     (.common:d_error_aspeed_z)
+                  20001354    00000004     (.common:d_error_height)
+                  20001358    00000004     (.common:d_error_vx)
+                  2000135c    00000004     (.common:d_error_vy)
+                  20001360    00000004     (.common:dis)
+                  20001364    00000004     (.common:error_X)
+                  20001368    00000004     (.common:error_Y)
+                  2000136c    00000004     (.common:error_angle_x)
+                  20001370    00000004     (.common:error_angle_y)
+                  20001374    00000004     (.common:error_angle_z)
+                  20001378    00000004     (.common:error_aspeed_x)
+                  2000137c    00000004     (.common:error_aspeed_y)
+                  20001380    00000004     (.common:error_aspeed_z)
+                  20001384    00000004     (.common:error_height)
+                  20001388    00000004     (.common:error_vx)
+                  2000138c    00000004     (.common:error_vy)
+                  20001390    00000004     (.common:except_angle_x)
+                  20001394    00000004     (.common:except_angle_y)
+                  20001398    00000004     (.common:except_angle_z)
+                  2000139c    00000004     (.common:except_aspeed_x)
+                  200013a0    00000004     (.common:except_aspeed_y)
+                  200013a4    00000004     (.common:except_aspeed_z)
+                  200013a8    00000004     (.common:except_height)
+                  200013ac    00000004     (.common:except_x_angle)
+                  200013b0    00000004     (.common:except_y_angle)
+                  200013b4    00000004     (.common:fly_thr)
+                  200013b8    00000004     (.common:game_angle_x)
+                  200013bc    00000004     (.common:game_angle_y)
+                  200013c0    00000004     (.common:game_speed)
+                  200013c4    00000004     (.common:i_error_X)
+                  200013c8    00000004     (.common:i_error_Y)
+                  200013cc    00000004     (.common:i_error_angle_x)
+                  200013d0    00000004     (.common:i_error_angle_x_max)
+                  200013d4    00000004     (.common:i_error_angle_x_min)
+                  200013d8    00000004     (.common:i_error_angle_y)
+                  200013dc    00000004     (.common:i_error_angle_y_max)
+                  200013e0    00000004     (.common:i_error_angle_y_min)
+                  200013e4    00000004     (.common:i_error_angle_z)
+                  200013e8    00000004     (.common:i_error_angle_z_max)
+                  200013ec    00000004     (.common:i_error_angle_z_min)
+                  200013f0    00000004     (.common:i_error_aspeed_x)
+                  200013f4    00000004     (.common:i_error_aspeed_x_max)
+                  200013f8    00000004     (.common:i_error_aspeed_x_min)
+                  200013fc    00000004     (.common:i_error_aspeed_y)
+                  20001400    00000004     (.common:i_error_aspeed_y_max)
+                  20001404    00000004     (.common:i_error_aspeed_y_min)
+                  20001408    00000004     (.common:i_error_aspeed_z)
+                  2000140c    00000004     (.common:i_error_aspeed_z_max)
+                  20001410    00000004     (.common:i_error_aspeed_z_min)
+                  20001414    00000004     (.common:i_error_height)
+                  20001418    00000004     (.common:i_error_vx)
+                  2000141c    00000004     (.common:i_error_vy)
+                  20001420    00000004     (.common:kd_angle_x)
+                  20001424    00000004     (.common:kd_angle_y)
+                  20001428    00000004     (.common:kd_angle_z)
+                  2000142c    00000004     (.common:kd_aspeed_x)
+                  20001430    00000004     (.common:kd_aspeed_y)
+                  20001434    00000004     (.common:kd_aspeed_z)
+                  20001438    00000004     (.common:kd_height)
+                  2000143c    00000004     (.common:kd_point)
+                  20001440    00000004     (.common:ki_angle_x)
+                  20001444    00000004     (.common:ki_angle_y)
+                  20001448    00000004     (.common:ki_angle_z)
+                  2000144c    00000004     (.common:ki_aspeed_x)
+                  20001450    00000004     (.common:ki_aspeed_y)
+                  20001454    00000004     (.common:ki_aspeed_z)
+                  20001458    00000004     (.common:ki_height)
+                  2000145c    00000004     (.common:ki_height_ready)
+                  20001460    00000004     (.common:ki_point)
+                  20001464    00000004     (.common:kp_angle_x)
+                  20001468    00000004     (.common:kp_angle_y)
+                  2000146c    00000004     (.common:kp_angle_z)
+                  20001470    00000004     (.common:kp_aspeed_x)
+                  20001474    00000004     (.common:kp_aspeed_y)
+                  20001478    00000004     (.common:kp_aspeed_z)
+                  2000147c    00000004     (.common:kp_height)
+                  20001480    00000004     (.common:kp_point)
+                  20001484    00000004     (.common:med_fil_cnt)
+                  20001488    00000004     (.common:motor_1)
+                  2000148c    00000004     (.common:motor_2)
+                  20001490    00000004     (.common:motor_3)
+                  20001494    00000004     (.common:motor_4)
+                  20001498    00000004     (.common:offset_acc_x)
+                  2000149c    00000004     (.common:offset_acc_y)
+                  200014a0    00000004     (.common:offset_acc_z)
+                  200014a4    00000004     (.common:offset_angle_x)
+                  200014a8    00000004     (.common:offset_angle_y)
+                  200014ac    00000004     (.common:offset_angle_z)
+                  200014b0    00000004     (.common:offset_aspeed_x)
+                  200014b4    00000004     (.common:offset_aspeed_y)
+                  200014b8    00000004     (.common:offset_aspeed_z)
+                  200014bc    00000004     (.common:offset_gyro_x)
+                  200014c0    00000004     (.common:offset_gyro_y)
+                  200014c4    00000004     (.common:offset_gyro_z)
+                  200014c8    00000004     (.common:old_error_X)
+                  200014cc    00000004     (.common:old_error_Y)
+                  200014d0    00000004     (.common:old_error_angle_x)
+                  200014d4    00000004     (.common:old_error_angle_y)
+                  200014d8    00000004     (.common:old_error_angle_z)
+                  200014dc    00000004     (.common:old_error_aspeed_x)
+                  200014e0    00000004     (.common:old_error_aspeed_y)
+                  200014e4    00000004     (.common:old_error_aspeed_z)
+                  200014e8    00000004     (.common:old_error_height)
+                  200014ec    00000004     (.common:old_error_vx)
+                  200014f0    00000004     (.common:old_error_vy)
+                  200014f4    00000004     (.common:shache)
+                  200014f8    00000004     (.common:shache_flag_2)
+                  200014fc    00000004     (.common:shache_flag_3)
+                  20001500    00000004     (.common:shache_flag_4)
+                  20001504    00000004     (.common:shache_flag_5)
+                  20001508    00000004     (.common:shache_flag_6)
+                  2000150c    00000004     (.common:test)
+                  20001510    00000002     (.common:CH_1)
+                  20001512    00000002     (.common:CH_2)
+                  20001514    00000002     (.common:CH_3)
+                  20001516    00000002     (.common:CH_4)
+                  20001518    00000002     (.common:CH_5)
+                  2000151a    00000002     (.common:CH_6)
+                  2000151c    00000001     (.common:CH1_flag)
+                  2000151d    00000001     (.common:CH2_flag)
+                  2000151e    00000001     (.common:CH4_flag)
+                  2000151f    00000001     (.common:CH5_flag)
+                  20001520    00000001     (.common:CH6_flag)
+                  20001521    00000001     (.common:PPM_1)
+                  20001522    00000001     (.common:PPM_2)
+                  20001523    00000001     (.common:PPM_3)
+                  20001524    00000001     (.common:PPM_4)
+                  20001525    00000001     (.common:PPM_5)
+                  20001526    00000001     (.common:PPM_6)
+                  20001527    00000001     (.common:SLAVE_ADDRESS)
+                  20001528    00000001     (.common:X1)
+                  20001529    00000001     (.common:X2)
+                  2000152a    00000001     (.common:Y1)
+                  2000152b    00000001     (.common:Y2)
+                  2000152c    00000001     (.common:_time_flag_1)
+                  2000152d    00000001     (.common:camera_count)
+                  2000152e    00000001     (.common:error_flag)
+                  2000152f    00000001     (.common:error_flag1)
+                  20001530    00000001     (.common:flow_count)
+                  20001531    00000001     (.common:flow_flag)
+                  20001532    00000001     (.common:flow_vx_num)
+                  20001533    00000001     (.common:fly_low)
+                  20001534    00000001     (.common:game_count)
+                  20001535    00000001     (.common:game_time_1)
+                  20001536    00000001     (.common:height_control)
+                  20001537    00000001     (.common:height_ready)
+                  20001538    00000001     (.common:led_flag)
+                  20001539    00000001     (.common:mode_height)
+                  2000153a    00000001     (.common:mode_land)
+                  2000153b    00000001     (.common:point_flag)
+                  2000153c    00000001     (.common:receive_count)
+                  2000153d    00000001     (.common:shache_flag)
+                  2000153e    00000001     (.common:vx)
+                  2000153f    00000001     (.common:vx_his)
+                  20001540    00000001     (.common:vx_temp)
+                  20001541    00000001     (.common:vy)
+                  20001542    00000001     (.common:vy_his)
+                  20001543    00000001     (.common:vy_temp)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00008ff0 records: 3, size/record: 8, table size: 24
+	.data: load addr=00008b78, load size=00000455 bytes, run addr=20000a70, run size=00000581 bytes, compression=rle
+	.bss: load addr=00008fe0, load size=00000008 bytes, run addr=20000ff4, run size=00000550 bytes, compression=zero_init
+	.vtable: load addr=00008fe8, load size=00000008 bytes, run addr=20000000, run size=0000026c bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00008fd0 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_rle24
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+20001248   ACC_AVG_X
+2000124c   ACC_AVG_Y
+20001250   ACC_AVG_Z
+20001254   ACC_OFFSET_X
+20001258   ACC_OFFSET_Y
+2000125c   ACC_OFFSET_Z
+200010a4   ACC_X_BUF
+200010cc   ACC_Y_BUF
+200010f4   ACC_Z_BUF
+00002d3d   ANO_DT_Receive_PID
+00002b01   ANO_DT_Send_MotoPWM
+000028d1   ANO_DT_Send_RCData
+00002fd1   ANO_DT_Send_Speed
+00002695   ANO_DT_Send_Status
+20001260   Az
+00007851   C$$EXIT
+20001264   CH1_AVG
+2000151c   CH1_flag
+20001268   CH2_AVG
+2000151d   CH2_flag
+2000126c   CH4_AVG
+2000151e   CH4_flag
+20001270   CH5_AVG
+2000151f   CH5_flag
+20001274   CH6_AVG
+20001520   CH6_flag
+20001510   CH_1
+20001512   CH_2
+20001514   CH_3
+20001516   CH_4
+20001518   CH_5
+2000151a   CH_6
+0000354b   COS
+00007d43   CPUcpsie
+00007e10   F8X16
+20000feb   FLOW_NUM
+00003523   FL_ABS
+20001278   G
+00007b29   GPIODirModeSet
+00006a27   GPIOPadConfigSet
+00007735   GPIOPinConfigure
+00007c35   GPIOPinTypeGPIOInput
+00007bb1   GPIOPinTypeGPIOOutput
+00007c47   GPIOPinTypeI2C
+00007c59   GPIOPinTypeI2CSCL
+00007c6b   GPIOPinTypePWM
+00007c7d   GPIOPinTypeTimer
+00007c8f   GPIOPinTypeUART
+00007de3   GPIOPinWrite
+2000127c   GYRO_AVG_X
+20001280   GYRO_AVG_Y
+20001284   GYRO_AVG_Z
+20001288   GYRO_I_Z
+2000128c   GYRO_OFFSET_X
+20001290   GYRO_OFFSET_Y
+20001294   GYRO_OFFSET_Z
+2000111c   GYRO_X_BUF
+20001144   GYRO_Y_BUF
+2000116c   GYRO_Z_BUF
+00006753   Get16Bit
+00003cb1   Get_Attitude
+20001298   Gx
+2000129c   Gy
+200012a0   Gz
+00008400   Hzk
+00007dc3   I2CMasterBusy
+00007dfb   I2CMasterControl
+00007dff   I2CMasterDataGet
+00007e03   I2CMasterDataPut
+00007d73   I2CMasterEnable
+0000777d   I2CMasterInitExpClk
+00007dcb   I2CMasterSlaveAddrSet
+00003645   IMUupdate
+000075cd   IntEnable
+00007d7d   IntMasterEnable
+000079d1   IntRegister
+200012a4   MPU6050_ACC_LAST_X
+200012a8   MPU6050_ACC_LAST_Y
+200012ac   MPU6050_ACC_LAST_Z
+00005c0b   MPU6050_Dataanl
+200012b0   MPU6050_GYRO_LAST_X
+200012b4   MPU6050_GYRO_LAST_Y
+200012b8   MPU6050_GYRO_LAST_Z
+00005b83   MPU6050_ZERO
+00004aa5   Moving_Median
+00004cb9   OLED_CS_Clr
+00004cab   OLED_CS_Set
+00004dc7   OLED_Clear
+00004c9d   OLED_DC_Clr
+00004c8f   OLED_DC_Set
+00004dab   OLED_Display_Off
+00004d8f   OLED_Display_On
+00005115   OLED_DrawBMP
+000051c5   OLED_Init
+00004cd5   OLED_RST_Clr
+00004cc7   OLED_RST_Set
+00004c65   OLED_SCLK_Clr
+00004c57   OLED_SCLK_Set
+00004c81   OLED_SDIN_Clr
+00004c73   OLED_SDIN_Set
+00004d4f   OLED_Set_Pos
+0000505f   OLED_ShowCHinese
+00004e31   OLED_ShowChar
+00004f31   OLED_ShowNum
+00004ffd   OLED_ShowString
+00004ce3   OLED_WR_Byte
+20001521   PPM_1
+200012bc   PPM_1_TIME_1
+200012c0   PPM_1_TIME_2
+20001522   PPM_2
+200012c4   PPM_2_TIME_1
+200012c8   PPM_2_TIME_2
+20001523   PPM_3
+200012cc   PPM_3_TIME_1
+200012d0   PPM_3_TIME_2
+20001524   PPM_4
+200012d4   PPM_4_TIME_1
+200012d8   PPM_4_TIME_2
+20001525   PPM_5
+200012dc   PPM_5_TIME_1
+200012e0   PPM_5_TIME_2
+20001526   PPM_6
+200012e4   PPM_6_TIME_1
+200012e8   PPM_6_TIME_2
+00007b53   PWMGenConfigure
+00007d4f   PWMGenEnable
+00007cfb   PWMGenPeriodSet
+00007ca1   PWMOutputState
+00007b75   PWMPulseWidthSet
+00005c65   Prepare_Data
+200012ec   Q_ANGLE_X
+200012f0   Q_ANGLE_Xr
+200012f4   Q_ANGLE_Y
+200012f8   Q_ANGLE_Yr
+200012fc   Q_ANGLE_Z
+000034c1   Q_rsqrt
+00007d67   ResetISR
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+0000357b   SIN
+20001527   SLAVE_ADDRESS
+000071b1   SysCtlClockGet
+00006fb1   SysCtlClockSet
+00007de9   SysCtlDelay
+00007bf9   SysCtlPWMClockSet
+00007a05   SysCtlPeripheralEnable
+20001300   T
+00005799   Timer0AIntHandler
+000060d3   Timer0BIntHandler
+00003f3d   Timer1AIntHandler
+00003fbf   Timer1BIntHandler
+0000403f   Timer2AIntHandler
+000040ed   Timer2BIntHandler
+00004175   Timer3AIntHandler
+0000421d   Timer3BIntHandler
+0000768d   TimerConfigure
+00007cb3   TimerControlEvent
+00007d0b   TimerEnable
+00007e07   TimerIntClear
+00007d87   TimerIntDisable
+00007dd3   TimerIntEnable
+00007cc5   TimerLoadSet
+00007d91   TimerPrescaleGet
+00007cd7   TimerPrescaleSet
+00007d9b   TimerValueGet
+00004a25   To_180_degrees
+00007d19   UARTCharGetNonBlocking
+00007da5   UARTCharPut
+00007d27   UARTCharPutNonBlocking
+00007d5b   UARTCharsAvail
+000078d9   UARTConfigSetExpClk
+00007b95   UARTDisable
+00007c0d   UARTEnable
+00007daf   UARTFIFOEnable
+00007def   UARTFIFOLevelSet
+00007e0b   UARTIntClear
+00007ddb   UARTIntEnable
+000033a9   UARTIntHandler
+00007bc9   UARTIntRegister
+00007db9   UARTIntStatus
+000030c1   UARTSend
+000032f5   UART_Send_AE
+00003181   UART_Send_AF
+20000fea   UART_Send_flag
+200011e4   UART_TXDATA
+20001304   US100_Alt
+20001308   US100_Alt_old
+00006535   US_100_get
+000064e9   US_100_init
+00006529   US_100_trig
+20001194   VX_BUF
+200011bc   VY_BUF
+000035b3   VariableParameter
+20001528   X1
+20001529   X2
+2000152a   Y1
+2000152b   Y2
+0000635d   _Atan
+20000f28   _Denorm
+00007279   _Dnorm
+00006ea1   _Dscale
+00007895   _Dtest
+00007569   _Dunscale
+20000f38   _Eps
+20000f24   _Errno
+20000fdc   _Fenv
+00007a9d   _Feraise
+20000f48   _Hugeval
+20000f58   _Inf
+20000f68   _Nan
+20000f88   _Rteps
+20000f78   _Snan
+20000fe0   _Tls_setup__Fenv
+20000f98   _Xbig
+20000fa0   _Zero
+20000a6c   __STACK_END
+00000800   __STACK_SIZE
+2000046c   __STACK_TOP
+00008ff0   __TI_CINIT_Base
+00009008   __TI_CINIT_Limit
+00008fd0   __TI_Handler_Table_Base
+00008fdc   __TI_Handler_Table_Limit
+00000001   __TI_args_main
+000073d9   __TI_auto_init
+20000fd4   __TI_cleanup_ptr
+00007d35   __TI_decompress_none
+00007df5   __TI_decompress_rle24
+20000fd8   __TI_dtors_ptr
+00000000   __TI_static_base__
+00007ce9   __TI_zero_init
+0000746d   __aeabi_cdcmpeq
+0000746d   __aeabi_cdcmple
+000074eb   __aeabi_cdrcmple
+000076e9   __aeabi_d2f
+000061af   __aeabi_dadd
+000068f1   __aeabi_ddiv
+000070b5   __aeabi_dmul
+000061a5   __aeabi_dsub
+00007999   __aeabi_f2d
+00007acd   __aeabi_i2d
+0000733d   __aeabi_memcpy
+0000733d   __aeabi_memcpy4
+0000733d   __aeabi_memcpy8
+ffffffff   __binit__
+ffffffff   __c_args__
+2000026c   __stack
+00007be1   _args_main
+000077c5   _c_int00
+20000fcc   _lock
+00007c2f   _nop
+00007c27   _register_lock
+00007c21   _register_unlock
+2000152c   _time_flag_1
+20000fd0   _unlock
+00007855   abort
+00005e4d   all_init
+00006b59   asin
+00006c75   atan2
+ffffffff   binit
+2000130c   buchang
+2000152d   camera_count
+00003d89   capture_init
+00005e99   check
+00005f13   check_6050_offest
+00005ffd   check_angle_offest
+20001310   check_aspeed_end
+20000fc4   check_count
+20000fc8   check_count2
+20001314   check_end
+00006083   check_start
+00001d29   control
+0000045d   control_1
+20001318   control_1_x
+2000131c   control_1_y
+20001320   control_1_z
+000008d9   control_2
+20001324   control_2_x
+20001328   control_2_y
+2000132c   control_2_z
+00000bed   control_height
+0000026d   control_init
+00000e3d   control_point
+00001119   control_point_1
+0000780d   copy_in
+20001330   ctrl_height_out
+20001334   d_error_X
+20001338   d_error_Y
+2000133c   d_error_angle_x
+20001340   d_error_angle_y
+20001344   d_error_angle_z
+20001348   d_error_aspeed_x
+2000134c   d_error_aspeed_y
+20001350   d_error_aspeed_z
+20001354   d_error_height
+20001358   d_error_vx
+2000135c   d_error_vy
+20001220   data_to_send
+00004c25   delay_ms
+20001360   dis
+20001364   error_X
+20001368   error_Y
+2000136c   error_angle_x
+20001370   error_angle_y
+20001374   error_angle_z
+20001378   error_aspeed_x
+2000137c   error_aspeed_y
+20001380   error_aspeed_z
+2000152e   error_flag
+2000152f   error_flag1
+20001384   error_height
+20001388   error_vx
+2000138c   error_vy
+20000fb8   exInt
+20001390   except_angle_x
+20001394   except_angle_y
+20001398   except_angle_z
+2000139c   except_aspeed_x
+200013a0   except_aspeed_y
+200013a4   except_aspeed_z
+200013a8   except_height
+200013ac   except_x_angle
+200013b0   except_y_angle
+0000785d   exit
+20000fbc   eyInt
+20000fc0   ezInt
+00004515   fast_atan2
+20000a70   fast_atan_table
+00007a39   feraiseexcept
+20000fe4   flag
+20001530   flow_count
+20001234   flow_data
+00005465   flow_filter
+20001531   flow_flag
+0000531d   flow_init
+20001532   flow_vx_num
+20001533   fly_low
+200013b4   fly_thr
+20000000   g_pfnRAMVectors
+00000000   g_pfnVectors
+00005899   game
+200013b8   game_angle_x
+200013bc   game_angle_y
+20001534   game_count
+200013c0   game_speed
+20001535   game_time_1
+000042b9   get_rc_value
+20001536   height_control
+20001537   height_ready
+00006651   i2c_init
+000066fd   i2c_read
+00006699   i2c_write
+200013c4   i_error_X
+200013c8   i_error_Y
+200013cc   i_error_angle_x
+200013d0   i_error_angle_x_max
+200013d4   i_error_angle_x_min
+200013d8   i_error_angle_y
+200013dc   i_error_angle_y_max
+200013e0   i_error_angle_y_min
+200013e4   i_error_angle_z
+200013e8   i_error_angle_z_max
+200013ec   i_error_angle_z_min
+200013f0   i_error_aspeed_x
+200013f4   i_error_aspeed_x_max
+200013f8   i_error_aspeed_x_min
+200013fc   i_error_aspeed_y
+20001400   i_error_aspeed_y_max
+20001404   i_error_aspeed_y_min
+20001408   i_error_aspeed_z
+2000140c   i_error_aspeed_z_max
+20001410   i_error_aspeed_z_min
+20001414   i_error_height
+20001418   i_error_vx
+2000141c   i_error_vy
+20001240   img
+00005e63   init_first
+00005e89   init_last
+00005387   k60_init
+20001420   kd_angle_x
+20001424   kd_angle_y
+20001428   kd_angle_z
+2000142c   kd_aspeed_x
+20001430   kd_aspeed_y
+20001434   kd_aspeed_z
+20001438   kd_height
+2000143c   kd_point
+20001440   ki_angle_x
+20001444   ki_angle_y
+20001448   ki_angle_z
+2000144c   ki_aspeed_x
+20001450   ki_aspeed_y
+20001454   ki_aspeed_z
+20001458   ki_height
+2000145c   ki_height_ready
+20001460   ki_point
+20001464   kp_angle_x
+20001468   kp_angle_y
+2000146c   kp_angle_z
+20001470   kp_aspeed_x
+20001474   kp_aspeed_y
+20001478   kp_aspeed_z
+2000147c   kp_height
+20001480   kp_point
+00000d91   land
+20001538   led_flag
+00007a6d   main
+20000fec   main_func_sp
+20001484   med_fil_cnt
+20000ff4   med_filter_tmp
+0000733d   memcpy
+20001539   mode_height
+2000153a   mode_land
+20001488   motor_1
+2000148c   motor_2
+20001490   motor_3
+20001494   motor_4
+00005ae1   mpu6050_delay
+00005b2d   mpu6050_init
+000047d5   mx_sin
+000044ed   my_abs
+00004711   my_atan
+0000493d   my_cos
+000049b9   my_deathzoom
+00004729   my_pow
+000048d5   my_sin
+00004741   my_sqrt
+20001498   offset_acc_x
+2000149c   offset_acc_y
+200014a0   offset_acc_z
+200014a4   offset_angle_x
+200014a8   offset_angle_y
+200014ac   offset_angle_z
+200014b0   offset_aspeed_x
+200014b4   offset_aspeed_y
+200014b8   offset_aspeed_z
+200014bc   offset_gyro_x
+200014c0   offset_gyro_y
+200014c4   offset_gyro_z
+200014c8   old_error_X
+200014cc   old_error_Y
+200014d0   old_error_angle_x
+200014d4   old_error_angle_y
+200014d8   old_error_angle_z
+200014dc   old_error_aspeed_x
+200014e0   old_error_aspeed_y
+200014e4   old_error_aspeed_z
+200014e8   old_error_height
+200014ec   old_error_vx
+200014f0   old_error_vy
+00004efb   oled_pow
+2000153b   point_flag
+00006d8d   pwm_init
+20000fa8   q0
+20000fac   q1
+20000fb0   q2
+20000fb4   q3
+00007afb   raise
+00005645   read_camera
+000053ef   read_flow
+2000153c   receive_count
+20001208   rx_data
+200014f4   shache
+2000153d   shache_flag
+200014f8   shache_flag_2
+200014fc   shache_flag_3
+20001500   shache_flag_4
+20001504   shache_flag_5
+20001508   shache_flag_6
+00007959   signal
+000067a9   sqrt
+2000150c   test
+20000fe5   time_flag_1
+20000fe6   time_flag_2
+20000fe7   time_flag_3
+20000fe8   time_flag_4
+20000fe9   time_flag_5
+00005751   timer_init
+000025bd   uart_init
+2000153e   vx
+2000153f   vx_his
+20001540   vx_temp
+20001541   vy
+20001542   vy_his
+20001543   vy_temp
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   __TI_static_base__
+00000000   g_pfnVectors
+00000001   __TI_args_main
+0000026d   control_init
+0000045d   control_1
+00000800   __STACK_SIZE
+000008d9   control_2
+00000bed   control_height
+00000d91   land
+00000e3d   control_point
+00001119   control_point_1
+00001d29   control
+000025bd   uart_init
+00002695   ANO_DT_Send_Status
+000028d1   ANO_DT_Send_RCData
+00002b01   ANO_DT_Send_MotoPWM
+00002d3d   ANO_DT_Receive_PID
+00002fd1   ANO_DT_Send_Speed
+000030c1   UARTSend
+00003181   UART_Send_AF
+000032f5   UART_Send_AE
+000033a9   UARTIntHandler
+000034c1   Q_rsqrt
+00003523   FL_ABS
+0000354b   COS
+0000357b   SIN
+000035b3   VariableParameter
+00003645   IMUupdate
+00003cb1   Get_Attitude
+00003d89   capture_init
+00003f3d   Timer1AIntHandler
+00003fbf   Timer1BIntHandler
+0000403f   Timer2AIntHandler
+000040ed   Timer2BIntHandler
+00004175   Timer3AIntHandler
+0000421d   Timer3BIntHandler
+000042b9   get_rc_value
+000044ed   my_abs
+00004515   fast_atan2
+00004711   my_atan
+00004729   my_pow
+00004741   my_sqrt
+000047d5   mx_sin
+000048d5   my_sin
+0000493d   my_cos
+000049b9   my_deathzoom
+00004a25   To_180_degrees
+00004aa5   Moving_Median
+00004c25   delay_ms
+00004c57   OLED_SCLK_Set
+00004c65   OLED_SCLK_Clr
+00004c73   OLED_SDIN_Set
+00004c81   OLED_SDIN_Clr
+00004c8f   OLED_DC_Set
+00004c9d   OLED_DC_Clr
+00004cab   OLED_CS_Set
+00004cb9   OLED_CS_Clr
+00004cc7   OLED_RST_Set
+00004cd5   OLED_RST_Clr
+00004ce3   OLED_WR_Byte
+00004d4f   OLED_Set_Pos
+00004d8f   OLED_Display_On
+00004dab   OLED_Display_Off
+00004dc7   OLED_Clear
+00004e31   OLED_ShowChar
+00004efb   oled_pow
+00004f31   OLED_ShowNum
+00004ffd   OLED_ShowString
+0000505f   OLED_ShowCHinese
+00005115   OLED_DrawBMP
+000051c5   OLED_Init
+0000531d   flow_init
+00005387   k60_init
+000053ef   read_flow
+00005465   flow_filter
+00005645   read_camera
+00005751   timer_init
+00005799   Timer0AIntHandler
+00005899   game
+00005ae1   mpu6050_delay
+00005b2d   mpu6050_init
+00005b83   MPU6050_ZERO
+00005c0b   MPU6050_Dataanl
+00005c65   Prepare_Data
+00005e4d   all_init
+00005e63   init_first
+00005e89   init_last
+00005e99   check
+00005f13   check_6050_offest
+00005ffd   check_angle_offest
+00006083   check_start
+000060d3   Timer0BIntHandler
+000061a5   __aeabi_dsub
+000061af   __aeabi_dadd
+0000635d   _Atan
+000064e9   US_100_init
+00006529   US_100_trig
+00006535   US_100_get
+00006651   i2c_init
+00006699   i2c_write
+000066fd   i2c_read
+00006753   Get16Bit
+000067a9   sqrt
+000068f1   __aeabi_ddiv
+00006a27   GPIOPadConfigSet
+00006b59   asin
+00006c75   atan2
+00006d8d   pwm_init
+00006ea1   _Dscale
+00006fb1   SysCtlClockSet
+000070b5   __aeabi_dmul
+000071b1   SysCtlClockGet
+00007279   _Dnorm
+0000733d   __aeabi_memcpy
+0000733d   __aeabi_memcpy4
+0000733d   __aeabi_memcpy8
+0000733d   memcpy
+000073d9   __TI_auto_init
+0000746d   __aeabi_cdcmpeq
+0000746d   __aeabi_cdcmple
+000074eb   __aeabi_cdrcmple
+00007569   _Dunscale
+000075cd   IntEnable
+0000768d   TimerConfigure
+000076e9   __aeabi_d2f
+00007735   GPIOPinConfigure
+0000777d   I2CMasterInitExpClk
+000077c5   _c_int00
+0000780d   copy_in
+00007851   C$$EXIT
+00007855   abort
+0000785d   exit
+00007895   _Dtest
+000078d9   UARTConfigSetExpClk
+00007959   signal
+00007999   __aeabi_f2d
+000079d1   IntRegister
+00007a05   SysCtlPeripheralEnable
+00007a39   feraiseexcept
+00007a6d   main
+00007a9d   _Feraise
+00007acd   __aeabi_i2d
+00007afb   raise
+00007b29   GPIODirModeSet
+00007b53   PWMGenConfigure
+00007b75   PWMPulseWidthSet
+00007b95   UARTDisable
+00007bb1   GPIOPinTypeGPIOOutput
+00007bc9   UARTIntRegister
+00007be1   _args_main
+00007bf9   SysCtlPWMClockSet
+00007c0d   UARTEnable
+00007c21   _register_unlock
+00007c27   _register_lock
+00007c2f   _nop
+00007c35   GPIOPinTypeGPIOInput
+00007c47   GPIOPinTypeI2C
+00007c59   GPIOPinTypeI2CSCL
+00007c6b   GPIOPinTypePWM
+00007c7d   GPIOPinTypeTimer
+00007c8f   GPIOPinTypeUART
+00007ca1   PWMOutputState
+00007cb3   TimerControlEvent
+00007cc5   TimerLoadSet
+00007cd7   TimerPrescaleSet
+00007ce9   __TI_zero_init
+00007cfb   PWMGenPeriodSet
+00007d0b   TimerEnable
+00007d19   UARTCharGetNonBlocking
+00007d27   UARTCharPutNonBlocking
+00007d35   __TI_decompress_none
+00007d43   CPUcpsie
+00007d4f   PWMGenEnable
+00007d5b   UARTCharsAvail
+00007d67   ResetISR
+00007d73   I2CMasterEnable
+00007d7d   IntMasterEnable
+00007d87   TimerIntDisable
+00007d91   TimerPrescaleGet
+00007d9b   TimerValueGet
+00007da5   UARTCharPut
+00007daf   UARTFIFOEnable
+00007db9   UARTIntStatus
+00007dc3   I2CMasterBusy
+00007dcb   I2CMasterSlaveAddrSet
+00007dd3   TimerIntEnable
+00007ddb   UARTIntEnable
+00007de3   GPIOPinWrite
+00007de9   SysCtlDelay
+00007def   UARTFIFOLevelSet
+00007df5   __TI_decompress_rle24
+00007dfb   I2CMasterControl
+00007dff   I2CMasterDataGet
+00007e03   I2CMasterDataPut
+00007e07   TimerIntClear
+00007e0b   UARTIntClear
+00007e10   F8X16
+00008400   Hzk
+00008fd0   __TI_Handler_Table_Base
+00008fdc   __TI_Handler_Table_Limit
+00008ff0   __TI_CINIT_Base
+00009008   __TI_CINIT_Limit
+20000000   g_pfnRAMVectors
+2000026c   __stack
+2000046c   __STACK_TOP
+20000a6c   __STACK_END
+20000a70   fast_atan_table
+20000f24   _Errno
+20000f28   _Denorm
+20000f38   _Eps
+20000f48   _Hugeval
+20000f58   _Inf
+20000f68   _Nan
+20000f78   _Snan
+20000f88   _Rteps
+20000f98   _Xbig
+20000fa0   _Zero
+20000fa8   q0
+20000fac   q1
+20000fb0   q2
+20000fb4   q3
+20000fb8   exInt
+20000fbc   eyInt
+20000fc0   ezInt
+20000fc4   check_count
+20000fc8   check_count2
+20000fcc   _lock
+20000fd0   _unlock
+20000fd4   __TI_cleanup_ptr
+20000fd8   __TI_dtors_ptr
+20000fdc   _Fenv
+20000fe0   _Tls_setup__Fenv
+20000fe4   flag
+20000fe5   time_flag_1
+20000fe6   time_flag_2
+20000fe7   time_flag_3
+20000fe8   time_flag_4
+20000fe9   time_flag_5
+20000fea   UART_Send_flag
+20000feb   FLOW_NUM
+20000fec   main_func_sp
+20000ff4   med_filter_tmp
+200010a4   ACC_X_BUF
+200010cc   ACC_Y_BUF
+200010f4   ACC_Z_BUF
+2000111c   GYRO_X_BUF
+20001144   GYRO_Y_BUF
+2000116c   GYRO_Z_BUF
+20001194   VX_BUF
+200011bc   VY_BUF
+200011e4   UART_TXDATA
+20001208   rx_data
+20001220   data_to_send
+20001234   flow_data
+20001240   img
+20001248   ACC_AVG_X
+2000124c   ACC_AVG_Y
+20001250   ACC_AVG_Z
+20001254   ACC_OFFSET_X
+20001258   ACC_OFFSET_Y
+2000125c   ACC_OFFSET_Z
+20001260   Az
+20001264   CH1_AVG
+20001268   CH2_AVG
+2000126c   CH4_AVG
+20001270   CH5_AVG
+20001274   CH6_AVG
+20001278   G
+2000127c   GYRO_AVG_X
+20001280   GYRO_AVG_Y
+20001284   GYRO_AVG_Z
+20001288   GYRO_I_Z
+2000128c   GYRO_OFFSET_X
+20001290   GYRO_OFFSET_Y
+20001294   GYRO_OFFSET_Z
+20001298   Gx
+2000129c   Gy
+200012a0   Gz
+200012a4   MPU6050_ACC_LAST_X
+200012a8   MPU6050_ACC_LAST_Y
+200012ac   MPU6050_ACC_LAST_Z
+200012b0   MPU6050_GYRO_LAST_X
+200012b4   MPU6050_GYRO_LAST_Y
+200012b8   MPU6050_GYRO_LAST_Z
+200012bc   PPM_1_TIME_1
+200012c0   PPM_1_TIME_2
+200012c4   PPM_2_TIME_1
+200012c8   PPM_2_TIME_2
+200012cc   PPM_3_TIME_1
+200012d0   PPM_3_TIME_2
+200012d4   PPM_4_TIME_1
+200012d8   PPM_4_TIME_2
+200012dc   PPM_5_TIME_1
+200012e0   PPM_5_TIME_2
+200012e4   PPM_6_TIME_1
+200012e8   PPM_6_TIME_2
+200012ec   Q_ANGLE_X
+200012f0   Q_ANGLE_Xr
+200012f4   Q_ANGLE_Y
+200012f8   Q_ANGLE_Yr
+200012fc   Q_ANGLE_Z
+20001300   T
+20001304   US100_Alt
+20001308   US100_Alt_old
+2000130c   buchang
+20001310   check_aspeed_end
+20001314   check_end
+20001318   control_1_x
+2000131c   control_1_y
+20001320   control_1_z
+20001324   control_2_x
+20001328   control_2_y
+2000132c   control_2_z
+20001330   ctrl_height_out
+20001334   d_error_X
+20001338   d_error_Y
+2000133c   d_error_angle_x
+20001340   d_error_angle_y
+20001344   d_error_angle_z
+20001348   d_error_aspeed_x
+2000134c   d_error_aspeed_y
+20001350   d_error_aspeed_z
+20001354   d_error_height
+20001358   d_error_vx
+2000135c   d_error_vy
+20001360   dis
+20001364   error_X
+20001368   error_Y
+2000136c   error_angle_x
+20001370   error_angle_y
+20001374   error_angle_z
+20001378   error_aspeed_x
+2000137c   error_aspeed_y
+20001380   error_aspeed_z
+20001384   error_height
+20001388   error_vx
+2000138c   error_vy
+20001390   except_angle_x
+20001394   except_angle_y
+20001398   except_angle_z
+2000139c   except_aspeed_x
+200013a0   except_aspeed_y
+200013a4   except_aspeed_z
+200013a8   except_height
+200013ac   except_x_angle
+200013b0   except_y_angle
+200013b4   fly_thr
+200013b8   game_angle_x
+200013bc   game_angle_y
+200013c0   game_speed
+200013c4   i_error_X
+200013c8   i_error_Y
+200013cc   i_error_angle_x
+200013d0   i_error_angle_x_max
+200013d4   i_error_angle_x_min
+200013d8   i_error_angle_y
+200013dc   i_error_angle_y_max
+200013e0   i_error_angle_y_min
+200013e4   i_error_angle_z
+200013e8   i_error_angle_z_max
+200013ec   i_error_angle_z_min
+200013f0   i_error_aspeed_x
+200013f4   i_error_aspeed_x_max
+200013f8   i_error_aspeed_x_min
+200013fc   i_error_aspeed_y
+20001400   i_error_aspeed_y_max
+20001404   i_error_aspeed_y_min
+20001408   i_error_aspeed_z
+2000140c   i_error_aspeed_z_max
+20001410   i_error_aspeed_z_min
+20001414   i_error_height
+20001418   i_error_vx
+2000141c   i_error_vy
+20001420   kd_angle_x
+20001424   kd_angle_y
+20001428   kd_angle_z
+2000142c   kd_aspeed_x
+20001430   kd_aspeed_y
+20001434   kd_aspeed_z
+20001438   kd_height
+2000143c   kd_point
+20001440   ki_angle_x
+20001444   ki_angle_y
+20001448   ki_angle_z
+2000144c   ki_aspeed_x
+20001450   ki_aspeed_y
+20001454   ki_aspeed_z
+20001458   ki_height
+2000145c   ki_height_ready
+20001460   ki_point
+20001464   kp_angle_x
+20001468   kp_angle_y
+2000146c   kp_angle_z
+20001470   kp_aspeed_x
+20001474   kp_aspeed_y
+20001478   kp_aspeed_z
+2000147c   kp_height
+20001480   kp_point
+20001484   med_fil_cnt
+20001488   motor_1
+2000148c   motor_2
+20001490   motor_3
+20001494   motor_4
+20001498   offset_acc_x
+2000149c   offset_acc_y
+200014a0   offset_acc_z
+200014a4   offset_angle_x
+200014a8   offset_angle_y
+200014ac   offset_angle_z
+200014b0   offset_aspeed_x
+200014b4   offset_aspeed_y
+200014b8   offset_aspeed_z
+200014bc   offset_gyro_x
+200014c0   offset_gyro_y
+200014c4   offset_gyro_z
+200014c8   old_error_X
+200014cc   old_error_Y
+200014d0   old_error_angle_x
+200014d4   old_error_angle_y
+200014d8   old_error_angle_z
+200014dc   old_error_aspeed_x
+200014e0   old_error_aspeed_y
+200014e4   old_error_aspeed_z
+200014e8   old_error_height
+200014ec   old_error_vx
+200014f0   old_error_vy
+200014f4   shache
+200014f8   shache_flag_2
+200014fc   shache_flag_3
+20001500   shache_flag_4
+20001504   shache_flag_5
+20001508   shache_flag_6
+2000150c   test
+20001510   CH_1
+20001512   CH_2
+20001514   CH_3
+20001516   CH_4
+20001518   CH_5
+2000151a   CH_6
+2000151c   CH1_flag
+2000151d   CH2_flag
+2000151e   CH4_flag
+2000151f   CH5_flag
+20001520   CH6_flag
+20001521   PPM_1
+20001522   PPM_2
+20001523   PPM_3
+20001524   PPM_4
+20001525   PPM_5
+20001526   PPM_6
+20001527   SLAVE_ADDRESS
+20001528   X1
+20001529   X2
+2000152a   Y1
+2000152b   Y2
+2000152c   _time_flag_1
+2000152d   camera_count
+2000152e   error_flag
+2000152f   error_flag1
+20001530   flow_count
+20001531   flow_flag
+20001532   flow_vx_num
+20001533   fly_low
+20001534   game_count
+20001535   game_time_1
+20001536   height_control
+20001537   height_ready
+20001538   led_flag
+20001539   mode_height
+2000153a   mode_land
+2000153b   point_flag
+2000153c   receive_count
+2000153d   shache_flag
+2000153e   vx
+2000153f   vx_his
+20001540   vx_temp
+20001541   vy
+20001542   vy_his
+20001543   vy_temp
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+
+[484 symbols]
